@@ -1,0 +1,61 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v2.1",
+    "signature": "8d68ebdce6bfe22d4f77897585021b8ba1382e1d"
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v2.1": {
+      "API.Boleto.Engine/1.0.0": {
+        "dependencies": {
+          "Boleto.Net": "2.1.0.703",
+          "Boleto2.Net": "2.1.0.273"
+        },
+        "runtime": {
+          "API.Boleto.Engine.dll": {}
+        }
+      },
+      "Boleto.Net/2.1.0.703": {
+        "runtime": {
+          "lib/Boleto.Net.dll": {
+            "assemblyVersion": "2.0.1.1",
+            "fileVersion": "2.0.1.1"
+          },
+          "lib/NReco.PdfGenerator.dll": {
+            "assemblyVersion": "1.1.12.0",
+            "fileVersion": "1.1.12.0"
+          }
+        }
+      },
+      "Boleto2.Net/2.1.0.273": {
+        "runtime": {
+          "lib/Boleto2Net.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.0.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "API.Boleto.Engine/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Boleto.Net/2.1.0.703": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-FMm6+Y/9kZfmPS+nGumMjhM12FUK/QOLlERfczdX5h4JE/ChIF0FwZJsGiXy1K82KN24tJymlS+kRY+TOGymlQ==",
+      "path": "boleto.net/2.1.0.703",
+      "hashPath": "boleto.net.2.1.0.703.nupkg.sha512"
+    },
+    "Boleto2.Net/2.1.0.273": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-m3nnZ5XlzVnNHCmMTa33r0A0+N9amsPVcCBNLRSb2vqjO47WPS1nhpfoAZY9GYA+I7WblSLSnxRrhf2Ggz8vmg==",
+      "path": "boleto2.net/2.1.0.273",
+      "hashPath": "boleto2.net.2.1.0.273.nupkg.sha512"
+    }
+  }
+}

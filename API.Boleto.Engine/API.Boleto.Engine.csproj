@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Boleto.Net" Version="2.1.0.703" />
+    <PackageReference Include="Boleto2.Net" Version="2.1.0.273" />
+    <PackageReference Include="BoletoNetCore" Version="1.0.0-beta5" />
+  </ItemGroup>
+
+</Project>
