@@ -6,3 +6,12 @@ C:\Users\jdoli\source\repos\API.Boleto.Engine\API.Business\obj\Debug\netcoreapp2
 C:\Users\jdoli\source\repos\API.Boleto.Engine\API.Business\obj\Debug\netcoreapp2.1\API.Business.AssemblyInfo.cs
 C:\Users\jdoli\source\repos\API.Boleto.Engine\API.Business\obj\Debug\netcoreapp2.1\API.Business.dll
 C:\Users\jdoli\source\repos\API.Boleto.Engine\API.Business\obj\Debug\netcoreapp2.1\API.Business.pdb
+C:\project\API.Boleto.Engine\API.Business\bin\Debug\netcoreapp2.1\API.Business.deps.json
+C:\project\API.Boleto.Engine\API.Business\bin\Debug\netcoreapp2.1\API.Business.dll
+C:\project\API.Boleto.Engine\API.Business\bin\Debug\netcoreapp2.1\API.Business.pdb
+C:\project\API.Boleto.Engine\API.Business\obj\Debug\netcoreapp2.1\API.Business.csprojAssemblyReference.cache
+C:\project\API.Boleto.Engine\API.Business\obj\Debug\netcoreapp2.1\API.Business.csproj.CoreCompileInputs.cache
+C:\project\API.Boleto.Engine\API.Business\obj\Debug\netcoreapp2.1\API.Business.AssemblyInfoInputs.cache
+C:\project\API.Boleto.Engine\API.Business\obj\Debug\netcoreapp2.1\API.Business.AssemblyInfo.cs
+C:\project\API.Boleto.Engine\API.Business\obj\Debug\netcoreapp2.1\API.Business.dll
+C:\project\API.Boleto.Engine\API.Business\obj\Debug\netcoreapp2.1\API.Business.pdb
