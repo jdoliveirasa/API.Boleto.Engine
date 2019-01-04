@@ -6,3 +6,28 @@
 <h2>Index</h2>
 
 <h3>Product List</h3>
+<a asp-controller="product" asp-action="add">Add New Product</a>
+<br />
+<table border="1">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Photo</th>
+        <th>Status</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>Action</th>
+    </tr>
+    @foreach (var product in ViewBag.products)
+    {
+        <tr>
+            <td>@product.Id</td>
+            <td>@product.Name</td>
+            <td><img src="~/images/@product.Photo" width="50" /> </td>
+            <td>@product.Status</td>
+            <td>@product.Price</td>
+            <td>@product.Quantity</td>
+            <td>Edit | Delete</td>
+        </tr>
+    }
+</table>
