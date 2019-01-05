@@ -27,7 +27,12 @@
             <td>@product.Status</td>
             <td>@product.Price</td>
             <td>@product.Quantity</td>
-            <td>Edit | Delete</td>
+            <td>
+                <a asp-controller="product" asp-action="edit" asp-route-id="@product.Id">Edit</a>
+                |
+                <a asp-controller="product" asp-action="delete" asp-route-id="@product.Id"
+                   onclick="return confirm('Are you sure:')">Delete</a>
+            </td>
         </tr>
     }
 </table>
