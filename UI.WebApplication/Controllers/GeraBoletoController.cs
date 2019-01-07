@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using BoletoNetCore;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using UI.WebApplication.Models;
+//using UI.WebApplication.Models;
 
 namespace UI.WebApplication.Controllers
 {
@@ -25,6 +26,11 @@ namespace UI.WebApplication.Controllers
         [Route("Bradesco")]
         public IActionResult Bradesco()
         {
+
+           
+
+
+
             return View("Bradesco", new Product());
         }
 

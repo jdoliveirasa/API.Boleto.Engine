@@ -21,5 +21,12 @@ namespace UI.WebApplication.Models
         }
 
         public DbSet<Product> Product { get; set; }
+
+        public DbSet<Banco> Banco { get; set; }
+        public DbSet<Boleto> Boleto { get; set; }
+        public DbSet<Cedente> Cedente { get; set; }
+        public DbSet<Cliente> Cliente { get; set; }
+        public DbSet<StatusBoleto> StatusBoleto { get; set; }
+
     }
 }
