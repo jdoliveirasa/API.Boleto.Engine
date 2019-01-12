@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using BoletoNetCore;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using UI.WebApplication.Engine;
 //using UI.WebApplication.Models;
 
 namespace UI.WebApplication.Controllers
@@ -13,7 +14,7 @@ namespace UI.WebApplication.Controllers
     [Route("GerarBoleto")]
     public class GerarBoletoController : Controller
     {
-        private DataContext db = new DataContext();
+        //private DataContext db = new DataContext();
 
         [Route("")]
         [Route("Index")]
@@ -26,12 +27,9 @@ namespace UI.WebApplication.Controllers
         [Route("Bradesco")]
         public IActionResult Bradesco()
         {
-
-           
-
-
-
-            return View("Bradesco", new Product());
+            BradescoEngine be = new BradescoEngine();
+            return View();
+            //return View("Bradesco", new Product());
         }
 
         [HttpGet]

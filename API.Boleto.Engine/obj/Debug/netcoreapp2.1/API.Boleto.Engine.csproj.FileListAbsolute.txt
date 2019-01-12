@@ -10,6 +10,7 @@ C:\Users\jdoli\source\repos\API.Boleto.Engine\API.Boleto.Engine\obj\Debug\netcor
 C:\project\API.Boleto.Engine\API.Boleto.Engine\bin\Debug\netcoreapp2.1\API.Boleto.Engine.deps.json
 C:\project\API.Boleto.Engine\API.Boleto.Engine\bin\Debug\netcoreapp2.1\API.Boleto.Engine.dll
 C:\project\API.Boleto.Engine\API.Boleto.Engine\bin\Debug\netcoreapp2.1\API.Boleto.Engine.pdb
+C:\project\API.Boleto.Engine\API.Boleto.Engine\obj\Debug\netcoreapp2.1\API.Boleto.Engine.csprojAssemblyReference.cache
 C:\project\API.Boleto.Engine\API.Boleto.Engine\obj\Debug\netcoreapp2.1\API.Boleto.Engine.csproj.CoreCompileInputs.cache
 C:\project\API.Boleto.Engine\API.Boleto.Engine\obj\Debug\netcoreapp2.1\API.Boleto.Engine.AssemblyInfoInputs.cache
 C:\project\API.Boleto.Engine\API.Boleto.Engine\obj\Debug\netcoreapp2.1\API.Boleto.Engine.AssemblyInfo.cs

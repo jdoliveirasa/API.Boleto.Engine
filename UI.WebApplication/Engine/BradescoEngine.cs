@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using BoletoNetCore;
 using Microsoft.AspNetCore.WebSockets.Internal;
+using UI.WebApplication.ClassMap;
 using Models = UI.WebApplication.Models;
 
 namespace UI.WebApplication.Engine
@@ -14,76 +15,107 @@ namespace UI.WebApplication.Engine
 
         public BradescoEngine()
         {
+            //SELECT NO BANCO
             var cedente = (from c in db.Cedente
-                              join b in db.Banco on c.IdBanco equals b.IdBanco
-                              where c.IdCedente == Common.Constants.Cedente.IBAY
-                              select new
-                              {                                  
-                                  c.IdCedente,
-                                  c.IdBanco,
-                                  c.Codigo,
-                                  c.Documento,
-                                  c.Identificacao,
-                                  c.NomeCedente,
-                                  c.Endereco,
-                                  c.Cidade,
-                                  c.UF,
-                                  c.PathCedenteLogo,
-                                  c.Agencia,
-                                  c.AgenciaDv,
-                                  c.ContaCorrente,
-                                  c.ContaCorrenteDv,
-                                  c.ConvenioFormato,
-                                  c.Convenio,
-                                  c.ContratoAcordo,
-                                  c.Carteira,
-                                  c.CarteiraVariacao,
-                                  c.CarteiraDescricao,
-                                  c.CodigoCiente,
-                                  Banco_IdBanco = b.IdBanco, 
-                                  Banco_Descricao = b.Descricao, 
-                                  Banco_Codigo = b.Codigo
-                              }).FirstOrDefault();
+                           join b in db.Banco on c.IdBanco equals b.IdBanco
+                           where c.IdCedente == Common.Constants.Cedente.IBAY
+                           select new
+                           {
+                               c.IdCedente,
+                               c.IdBanco,
+                               c.Codigo,
+                               c.Documento,
+                               c.Identificacao,
+                               c.NomeCedente,
+                               c.Endereco,
+                               c.Cidade,
+                               c.UF,
+                               c.PathCedenteLogo,
+                               c.Agencia,
+                               c.AgenciaDv,
+                               c.ContaCorrente,
+                               c.ContaCorrenteDv,
+                               c.ConvenioFormato,
+                               c.Convenio,
+                               c.ContratoAcordo,
+                               c.Carteira,
+                               c.CarteiraVariacao,
+                               c.CarteiraDescricao,
+                               c.CodigoCiente,
+                               Banco_IdBanco = b.IdBanco,
+                               Banco_Descricao = b.Descricao,
+                               Banco_Codigo = b.Codigo
+                           }).FirstOrDefault();
+            //SELECT NO BANCO
 
             Boletos boletos = null;
             boletos = new Boletos();
 
+            Conta conta = new Conta();
+            conta.BancoNumero = "";
+            conta.Titular = "";
+            conta.Agencia = "";
+            conta.AgenciaDigito = "";
+            conta.Numero = "";
+            conta.NumeroDigito = "";
+            conta.CarteiraBoleto = "";
+            conta.VariacaoCarteira = "";
+            conta.Emissor = "";
+            conta.CedenteNumero = "";
+            conta.CedenteDigito = "";
+
+            EmissaoBoleto emissaoBoleto = new EmissaoBoleto();
+            emissaoBoleto.Banco = "";
+
+            GlobalsDadosEmpresa globalsDadosEmpresa = new GlobalsDadosEmpresa();
+            globalsDadosEmpresa.Cnpj = "";
+            globalsDadosEmpresa.Logradouro = "";
+            globalsDadosEmpresa.Numero = "";
+            globalsDadosEmpresa.Complemento = "";
+            globalsDadosEmpresa.Bairro = "";
+            globalsDadosEmpresa.CidadeNome = "";
+            globalsDadosEmpresa.CidadeUf = "";
+            globalsDadosEmpresa.Cep = "";
+
             //Cabeçalho
-            boletos.Banco = Banco.Instancia(Int32.Parse(cedente.Banco_Codigo));
+            boletos.Banco = Banco.Instancia(Int32.Parse(conta.BancoNumero));
             boletos.Banco.Cedente = new Cedente
             {
-                CPFCNPJ = cedente.Documento,
-                Nome = cedente.Conta.Titular,
+                CPFCNPJ = globalsDadosEmpresa.Cnpj,
+                Nome = conta.Titular,
                 Observacoes = string.Empty,
                 ContaBancaria = new ContaBancaria
                 {
-                    Agencia = this.Conta.Agencia,
-                    DigitoAgencia = this.Conta.AgenciaDigito,
+                    Agencia = conta.Agencia,
+                    DigitoAgencia = conta.AgenciaDigito,
                     OperacaoConta = string.Empty,
-                    Conta = this.Conta.Numero,
-                    DigitoConta = this.Conta.NumeroDigito,
-                    CarteiraPadrao = this.Conta.CarteiraBoleto,
-                    VariacaoCarteiraPadrao = this.Conta.VariacaoCarteira,
+                    Conta = conta.Numero,
+                    DigitoConta = conta.NumeroDigito,
+                    CarteiraPadrao = conta.CarteiraBoleto,
+                    VariacaoCarteiraPadrao = conta.VariacaoCarteira,
                     TipoCarteiraPadrao = TipoCarteira.CarteiraCobrancaSimples,
                     TipoFormaCadastramento = TipoFormaCadastramento.ComRegistro,
-                    TipoImpressaoBoleto = this.Conta.Emissor == EmissaoBoleto.Banco ? TipoImpressaoBoleto.Banco : TipoImpressaoBoleto.Empresa,
+                    TipoImpressaoBoleto = conta.Emissor == emissaoBoleto.Banco ? TipoImpressaoBoleto.Banco : TipoImpressaoBoleto.Empresa,
                     TipoDocumento = TipoDocumento.Tradicional
                 },
-                Codigo = this.Conta.CedenteNumero,
-                CodigoDV = this.Conta.CedenteDigito.ToString(),
+                Codigo = conta.CedenteNumero,
+                CodigoDV = conta.CedenteDigito.ToString(),
                 CodigoTransmissao = string.Empty,
-                Endereco = new Boleto2Net.Endereco
+                //Endereco = new Boleto2Net.Endereco
+                Endereco = new Endereco
                 {
-                    LogradouroEndereco = Globals.DadosEmpresa.Endereco.Logradouro,
-                    LogradouroNumero = Globals.DadosEmpresa.Endereco.Numero,
-                    LogradouroComplemento = Globals.DadosEmpresa.Endereco.Complemento,
-                    Bairro = Globals.DadosEmpresa.Endereco.Bairro,
-                    Cidade = Globals.DadosEmpresa.Endereco.Cidade.Nome,
-                    UF = Globals.DadosEmpresa.Endereco.Cidade.Uf.ToString(),
-                    CEP = Globals.DadosEmpresa.Endereco.Cep
+                    LogradouroEndereco = globalsDadosEmpresa.Logradouro,
+                    LogradouroNumero = globalsDadosEmpresa.Numero,
+                    LogradouroComplemento = globalsDadosEmpresa.Complemento,
+                    Bairro = globalsDadosEmpresa.Bairro,
+                    Cidade = globalsDadosEmpresa.CidadeNome,
+                    UF = globalsDadosEmpresa.CidadeUf,
+                    CEP = globalsDadosEmpresa.Cep
                 }
             };
             boletos.Banco.FormataCedente();
+
+            /*
 
             //Títulos
             foreach (var cr in crs)
@@ -154,6 +186,10 @@ namespace UI.WebApplication.Engine
                 boleto.ComplementoInstrucao3 = string.Empty;                
                 */
 
+
+
+            /*
+
                 boleto.CodigoProtesto = this.Conta.DiasProtesto == 0 ? TipoCodigoProtesto.NaoProtestar : TipoCodigoProtesto.ProtestarDiasuteis;
                 boleto.DiasProtesto = this.Conta.DiasProtesto;
 
@@ -163,7 +199,7 @@ namespace UI.WebApplication.Engine
                 boleto.ValidarDados();
                 boletos.Add(boleto);
             }
-            #endregion Daddos do título
+#endregion Daddos do título
 
             //Gerar Remessa
             var stream = new MemoryStream();
@@ -179,8 +215,9 @@ namespace UI.WebApplication.Engine
                 var pathPDF = GArquivos.CombinarDiretorio(PathRemessa, $"{boleto.NumeroControleParticipante}.pdf");
                 File.WriteAllBytes(pathPDF, pdf);
             }
+
+        */
+
         }
-
-
     }
 }

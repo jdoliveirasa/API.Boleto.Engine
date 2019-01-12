@@ -67,7 +67,7 @@ using UI.WebApplication.Models;
             WriteLiteral("\r\n<h2>Index</h2>\r\n\r\n<h3>GERADOR DE BOLETOS</h3>\r\n<br />\r\n\r\n");
             EndContext();
             BeginContext(102, 89, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7b03435881b2423ca4b42106be92eb3d", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0e003f006a1a48aa93914a4700c299f1", async() => {
                 BeginContext(138, 46, true);
                 WriteLiteral("\r\n    <input type=\"submit\" value=\"Bradesco\">\r\n");
                 EndContext();
@@ -90,7 +90,7 @@ using UI.WebApplication.Models;
             WriteLiteral("\r\n<br />\r\n\r\n");
             EndContext();
             BeginContext(203, 91, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b3c004901e3b45cb9604abf0442952a0", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e417bbbe09f7418d8e671641de6618f1", async() => {
                 BeginContext(240, 47, true);
                 WriteLiteral("\r\n    <input type=\"submit\" value=\"Santander\">\r\n");
                 EndContext();
@@ -113,7 +113,7 @@ using UI.WebApplication.Models;
             WriteLiteral("\r\n<br />\r\n\r\n");
             EndContext();
             BeginContext(306, 81, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "17dbeb88f70f4a53996b769c5658c02c", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1e8fc9e41fba4f5dbe7666465232f5d7", async() => {
                 BeginContext(338, 42, true);
                 WriteLiteral("\r\n    <input type=\"submit\" value=\"Itau\">\r\n");
                 EndContext();
