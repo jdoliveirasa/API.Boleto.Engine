@@ -1,9 +1,15 @@
-﻿@model UI.WebApplication.Models.Product
+﻿@*@model UI.WebApplication.Models.Product
+
+    @{
+        ViewData["Title"] = "Bradesco";
+    }
+
+    <h2>Bradesco</h2>
+
+    <h4>GEROU O BOLETO BRADESCO</h4>*@
 
 @{
-    ViewData["Title"] = "Bradesco";
+    Layout = null;
 }
 
-<h2>Bradesco</h2>
-
-<h4>GEROU O BOLETO BRADESCO</h4>
+@Html.Raw(ViewBag.html)

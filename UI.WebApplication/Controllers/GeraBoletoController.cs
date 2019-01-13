@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using BoletoNetCore;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using SelectPdf;
 using UI.WebApplication.Engine;
 //using UI.WebApplication.Models;
 
@@ -28,7 +29,29 @@ namespace UI.WebApplication.Controllers
         public IActionResult Bradesco()
         {
             BradescoEngine be = new BradescoEngine();
-            return View();
+            var html = be.GerarBoleto();
+            ViewBag.html = html;
+
+            // instantiate a html to pdf converter object
+            HtmlToPdf converter = new HtmlToPdf();
+
+            // create a new pdf document converting an url 
+            PdfDocument doc = converter.ConvertHtmlString(html);
+
+            // save pdf document 
+            byte[] pdf = doc.Save();
+
+            // close pdf document 
+            doc.Close();
+
+            // return resulted pdf document 
+            FileResult fileResult = new FileContentResult(pdf, "application/pdf");
+            fileResult.FileDownloadName = "Document.pdf";
+            return fileResult;
+
+
+
+            //return View();
             //return View("Bradesco", new Product());
         }
 

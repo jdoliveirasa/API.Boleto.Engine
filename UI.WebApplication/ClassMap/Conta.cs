@@ -29,5 +29,15 @@ namespace UI.WebApplication.ClassMap
 
         public string CedenteDigito { get; set; }
 
+        public decimal PercentualMulta { get; set; }
+
+        public decimal PercentualMora { get; set; }
+
+        public int DiasProtesto { get; set; }
+
+        public int LayoutRemessa { get; set; }
+
+        public int SequencialRemessa { get; set; }        
+
     }
 }
